@@ -1,3 +1,2 @@
-Patient:1976,Vaishnavi,18
-Doctor:0987,Dr.Vishnu,Specialist (Radiologist)
-Appointment:1976,0987,2026-02-18 10:20:00
+Patient:2345,Isha,19
+Doctor:876,Dr.nai,Specialist (radiologist)
