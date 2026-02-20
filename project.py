@@ -1,12 +1,12 @@
 from datetime import datetime
 
-#Person Base Class...................
+#Person Parent class...................
 class Person:
     def __init__(self, id, name):
         self.id = id
         self.name = name
 
-# Doctor .............. 
+# Doctor Child class .............. 
 class Doctor(Person):
     def get_role(self):
         return "General Doctor"
@@ -30,7 +30,7 @@ class MedicalHistory:
     def show(self):
         return self.__records
 
-# Patient.....................
+# Patient Child class.....................
 class Patient(Person):
     def __init__(self, id, name, age):
         super().__init__(id, name)
@@ -47,7 +47,8 @@ class Hospital:
     def add_patient(self):
         id = input("Patient ID: ")
         if id in self.patients:
-            print("Patient exists."); return
+            print("Patient exists."); 
+            return
         self.patients[id] = Patient(id, input("Name: "), input("Age: "))
         print("Patient added.")
 
@@ -68,8 +69,7 @@ class Hospital:
         if pid not in self.patients or did not in self.doctors:
             print("Patient/Doctor not found."); return
         try:
-            dt = datetime.strptime(input("Date (YYYY-MM-DD HH:MM): "),
-                                   "%Y-%m-%d %H:%M")
+            dt = datetime.strptime(input("Date (YYYY-MM-DD HH:MM): "),"%Y-%m-%d %H:%M")
         except:
             print("Wrong format."); return
         for a in self.appointments:
@@ -103,10 +103,10 @@ class Hospital:
                 f.write(f"Appointment:{a[0]},{a[1]},{a[2]}\n")
         print("Data saved.")
 
-# -------- Menu --------
+# creating object..........
 h = Hospital()
 while True:
-    print("Hospital Patient Management System")
+    print("\nHospital Patient Management System")
     print("1.Register Patient \n2.Register Doctor \n3.Book Appointment \n4.Add Record  \n5.View History \n6.Save Data \n7.Exit")
     ch = input("Choice: ")
     if ch == "1":
