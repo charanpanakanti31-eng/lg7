@@ -1,2 +1,0 @@
-Patient:2345,Isha,19
-Doctor:876,Dr.nai,Specialist (radiologist)
