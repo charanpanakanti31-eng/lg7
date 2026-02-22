@@ -55,7 +55,8 @@ class Hospital:
     def add_doctor(self):
         id = input("Doctor ID: ")
         if id in self.doctors:
-            print("Doctor exists."); return
+            print("Doctor already exists."); 
+            return
         name = input("Name: ")
         if input("1.General 2.Specialist: ") == "2":
             self.doctors[id] = SpecialistDoctor(id, name, input("Specialty: "))
